@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 dotenv.config()
 
 module.exports = {
+    DB_SYNC : process.env.DB_SYNC,
     PORT: process.env.PORT,
     SALT : bcrypt.genSaltSync(10),
     JWT_KEY :process.env.JWT_KEY 
