@@ -17,11 +17,11 @@ const create = async(req,res)=>{
         })
     } catch (error) {
         console.log('something went wrong in service layer')
-       return res.status(500).json({
+       return res.status(error.statusCode).json({
             data: {},
             success: false, 
-            message: 'faild to register user',
-            error: error
+            message: error.message,
+            error: error.explanation
         })
     }
 }
